@@ -345,7 +345,7 @@ uninstall_enlight() {
   rm -rf .config/express
   rm -rf .config/rage
   rm -rf .config/terminology
-  rm -rf .local/bin/elluminate.sh
+  rm -rf .local/bin/elucidate.sh
 
   remov_preq
 
