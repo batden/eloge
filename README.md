@@ -1,38 +1,38 @@
-# extinguish
+# eloge - WIP
 
 Use this script to uninstall Enlightenment and related applications.
 
 Please take a look at the comments in the script before running it.
 
-*See also [elluminate.sh](https://github.com/batden/elluminate) (installation script).*
+*See also [elucidate.sh](https://github.com/batden/elucidate) (installation script).*
 
 ## Get started
 
 First, clone this repository:
 
 ```bash
-git clone https://github.com/batden/extinguish.git .extinguish
+git clone https://github.com/batden/eloge.git .eloge
 ```
 
-This creates a new hidden folder named **.extinguish** in your home directory.
+This creates a new hidden folder named **.eloge** in your home directory.
 
-Copy the file extinguish.sh from this new folder to the download folder.
+Copy the file eloge.sh from this new folder to the download folder.
 
 Now change to the download folder and make the script executable:
 
 ```bash
-chmod +x extinguish.sh
+chmod +x eloge.sh
 ```
 
 Then issue the following command:
 
 ```bash
-./extinguish.sh
+./eloge.sh
 ```
 
 ## Update local repository
 
-Change to ~/.extinguish/ and run:
+Change to ~/.eloge/ and run:
 
 ```bash
 git pull
