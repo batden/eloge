@@ -26,26 +26,37 @@ remov_preq() {
   echo
   # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
   if [ -d $ESRC/rlottie ]; then
-    read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
+    read -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
-
-      cd $ESRC/ddcutil-$DDTL
-      sudo make uninstall &>/dev/null
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
-      echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove prerequisites... OK)"
+      printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+      ;;
+    esac
+  fi
 
+  if [ -d $ESRC/ddcutil-$DDTL ]; then
+    read -t 12 -p "Remove ddcutil? [Y/n] " answer
+    case $answer in
+    y | Y)
+      cd $ESRC/
+      sudo make uninstall &>/dev/null
+      cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      echo
+      ;;
+    n | N)
+      printf "\n$ITA%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      ;;
+    *)
       cd $ESRC/ddcutil-$DDTL
       sudo make uninstall &>/dev/null
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
@@ -55,7 +66,7 @@ remov_preq() {
   fi
 }
 
-uninstall_e26() {
+uninstall_enlight() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
@@ -72,7 +83,7 @@ uninstall_e26() {
   cd $HOME
 
   for I in $PROG_MN; do
-    cd $ESRC/e26/$I
+    cd $ESRC/enlighten/$I
     sudo ninja -C build uninstall &>/dev/null
   done
 
@@ -314,7 +325,7 @@ uninstall_e26() {
   sudo rm -rf enlightenment.desktop
 
   cd $HOME
-  sudo rm -rf $ESRC/e26
+  sudo rm -rf $ESRC/enlight
   rm -rf $SCRFLR
   rm -rf .e
   rm -rf .e-log*
@@ -375,7 +386,7 @@ uninstall_e26() {
 lo() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
-  uninstall_e26
+  uninstall_enlight
 
   printf "\n$BDR%s $OFF%s\n\n" "Done!"
 }
