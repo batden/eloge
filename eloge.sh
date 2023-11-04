@@ -327,7 +327,7 @@ uninstall_enlight() {
   sudo rm -rf enlightenment.desktop
 
   cd $HOME
-  sudo rm -rf $ESRC/enlight
+  sudo rm -rf $ESRC/enlighten
   rm -rf $SCRFLR
   rm -rf .e
   rm -rf .e-log*
