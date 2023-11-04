@@ -388,7 +388,7 @@ uninstall_enlighten() {
 lo() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
-  uninstall_enlight
+  uninstall_enlighten
 
   printf "\n$BDR%s $OFF%s\n\n" "Done!"
 }
