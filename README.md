@@ -1,4 +1,4 @@
-# eloge - WIP
+# eloge
 
 Use this script to uninstall Enlightenment and related applications.
 
