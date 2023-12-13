@@ -16,9 +16,9 @@ git clone https://github.com/batden/eloge.git .eloge
 
 This creates a new hidden folder named **.eloge** in your home directory.
 
-Copy the file eloge.sh from this new folder to the download folder.
+Copy the eloge.sh file from this new folder to you download folder.
 
-Now change to the download folder and make the script executable:
+Navigate to the download folder and make the script executable:
 
 ```bash
 chmod +x eloge.sh
