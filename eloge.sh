@@ -2,7 +2,7 @@
 
 # This script helps you cleanly and safely uninstall Enlightenment and related applications.
 
-# ELOGE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# ELOGE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/
 
