@@ -16,7 +16,7 @@ OFF="\e[0m"
 SCRFLR=$HOME/.elucidate
 DDCTL=2.0.0
 
-PROG_MN="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete efl"
+PROG_MBS="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete efl"
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
@@ -84,7 +84,7 @@ uninstall_enlighten() {
 
   cd $HOME
 
-  for I in $PROG_MN; do
+  for I in $PROG_MBS; do
     cd $ESRC/enlighten/$I
     sudo ninja -C build uninstall &>/dev/null
   done
