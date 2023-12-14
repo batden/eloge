@@ -9,12 +9,12 @@
 # Got a GitHub account? Please consider starring our repositories to show your support.
 # Thank you!
 
-ITA="\e[3m"
-BDR="\e[1;31m"
+ITAL="\e[3m"
+BLDR="\e[1;31m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elucidate
-DDTL=2.0.0
+DDCTL=2.0.0
 
 PROG_MN="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete efl"
 
@@ -35,7 +35,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd $ESRC/rlottie
@@ -46,22 +46,22 @@ remov_preq() {
     esac
   fi
 
-  if [ -d $ESRC/ddcutil-$DDTL ]; then
+  if [ -d $ESRC/ddcutil-$DDCTL ]; then
     read -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
       cd $ESRC/
       sudo make uninstall &>/dev/null
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      cd .. && rm -rf $ESRC/ddcutil-$DDCTL
       echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd $ESRC/ddcutil-$DDTL
+      cd $ESRC/ddcutil-$DDCTL
       sudo make uninstall &>/dev/null
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      cd .. && rm -rf $ESRC/ddcutil-$DDCTL
       echo
       ;;
     esac
@@ -70,7 +70,7 @@ remov_preq() {
 
 uninstall_enlighten() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -78,8 +78,8 @@ uninstall_enlighten() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
 
   clear
-  printf "\n\n$BDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
-  printf "$BDR%s $OFF%s\n\n" "This may take a few minutes..."
+  printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  printf "$BLDR%s $OFF%s\n\n" "This may take a few minutes..."
   sleep 1
 
   cd $HOME
@@ -359,7 +359,7 @@ uninstall_enlighten() {
       sleep 1
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete bash_aliases... OK)"
+      printf "\n$ITAL%s $OFF%s\n\n" "(do not delete bash_aliases... OK)"
       sleep 1
       ;;
     *)
@@ -386,11 +386,11 @@ uninstall_enlighten() {
 }
 
 lo() {
-  trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   uninstall_enlighten
 
-  printf "\n$BDR%s $OFF%s\n\n" "Done!"
+  printf "\n$BLDR%s $OFF%s\n\n" "Done!"
 }
 
 lo
