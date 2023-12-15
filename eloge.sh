@@ -16,7 +16,7 @@ OFF="\e[0m"
 SCRFLR=$HOME/.elucidate
 DDCTL=2.0.0
 
-PROG_MBS="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete efl"
+PROG_MBS="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts enlightenment-module-penguins eflete efl"
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
@@ -24,7 +24,6 @@ beep_exit() {
 
 remov_preq() {
   echo
-  # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
   if [ -d $ESRC/rlottie ]; then
     read -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
@@ -373,7 +372,7 @@ uninstall_enlighten() {
   find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
-        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts')
+        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins')
   done
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
