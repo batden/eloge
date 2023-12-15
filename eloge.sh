@@ -384,6 +384,7 @@ uninstall_enlighten() {
   # Candidates for deletion: Search for “eloge”, “ebackups” and “pbackups” in your home folder.
 }
 
+# Calls the main function.
 lo() {
   trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
