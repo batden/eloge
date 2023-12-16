@@ -96,16 +96,6 @@ uninstall_enlighten() {
   cd /etc/xdg/menus
   sudo rm -rf e-applications.menu
 
-  cd /usr/local
-  sudo rm -rf ecore*
-  sudo rm -rf edje*
-  sudo rm -rf efl*
-  sudo rm -rf eio*
-  sudo rm -rf eldbus*
-  sudo rm -rf elementary*
-  sudo rm -rf eo*
-  sudo rm -rf evas*
-
   cd /usr/local/bin
   sudo rm -rf e_paledit*
   sudo rm -rf eina*
@@ -124,11 +114,8 @@ uninstall_enlighten() {
 
   cd /usr/local/include
   sudo rm -rf -- *-1
-  sudo rm -rf aom
-  sudo rm -rf avif
   sudo rm -rf enlightenment
   sudo rm -rf express*
-  sudo rm -rf webp*
 
   cd /usr/local/lib
   sudo rm -rf ecore*
@@ -161,7 +148,6 @@ uninstall_enlighten() {
   sudo rm -rf libenventor*
   sudo rm -rf libeo*
   sudo rm -rf libeolian*
-  sudo rm -rf libephysics*
   sudo rm -rf libethumb*
   sudo rm -rf libevas*
 
