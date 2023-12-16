@@ -13,7 +13,7 @@ ITAL="\e[3m"
 BLDR="\e[1;31m"
 OFF="\e[0m"
 
-SCRFLR=$HOME/.elucidate
+SCRFLDR=$HOME/.elucidate
 DDCTL=2.0.0
 
 PROG_MBS="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts enlightenment-module-penguins eflete efl"
@@ -188,7 +188,7 @@ del_list() {
 
   cd $HOME
   sudo rm -rf $ESRCDIR/enlighten
-  rm -rf $SCRFLR
+  rm -rf $SCRFLDR
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
