@@ -90,6 +90,8 @@ uninstall_enlighten() {
     sudo ninja -C build uninstall &>/dev/null
   done
 
+  remov_preq
+
   cd /etc
   sudo rm -rf enlightenment
 
@@ -335,8 +337,6 @@ uninstall_enlighten() {
   rm -rf .config/rage
   rm -rf .config/terminology
   rm -rf .local/bin/elucidate.sh
-
-  remov_preq
 
   if [ -f $HOME/.bash_aliases ]; then
     read -t 12 -p "Remove the bash_aliases file? [Y/n] " answer
