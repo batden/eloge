@@ -29,7 +29,7 @@ remov_preq() {
     case $answer in
     y | Y)
       cd $ESRC/rlottie
-      sudo ninja -C build uninstall &>/dev/null
+      sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
       ;;
@@ -38,7 +38,7 @@ remov_preq() {
       ;;
     *)
       cd $ESRC/rlottie
-      sudo ninja -C build uninstall &>/dev/null
+      sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
       ;;
@@ -50,7 +50,7 @@ remov_preq() {
     case $answer in
     y | Y)
       cd $ESRC/
-      sudo make uninstall &>/dev/null
+      sudo make uninstall
       cd .. && rm -rf $ESRC/ddcutil-$DDCTL
       echo
       ;;
@@ -59,7 +59,7 @@ remov_preq() {
       ;;
     *)
       cd $ESRC/ddcutil-$DDCTL
-      sudo make uninstall &>/dev/null
+      sudo make uninstall
       cd .. && rm -rf $ESRC/ddcutil-$DDCTL
       echo
       ;;
@@ -67,6 +67,7 @@ remov_preq() {
   fi
 }
 
+# Enlightenment-related files and folders to be removed.
 del_list() {
   cd /etc
   sudo rm -rf enlightenment
@@ -149,11 +150,11 @@ del_list() {
   sudo rm -rf wayland-sessions*
 
   cd /usr/local/share/applications
-  sudo sed -i '/enlightenment_filemanager/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/ecrire/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/entice/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/ephoto/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/rage/d' mimeinfo.cache &>/dev/null
+  sudo sed -i '/enlightenment_filemanager/d' mimeinfo.cache
+  sudo sed -i '/ecrire/d' mimeinfo.cache
+  sudo sed -i '/entice/d' mimeinfo.cache
+  sudo sed -i '/ephoto/d' mimeinfo.cache
+  sudo sed -i '/rage/d' mimeinfo.cache
   sudo rm -rf enlightenment_paledit.desktop
   sudo rm -rf terminology.desktop
 
@@ -178,8 +179,8 @@ del_list() {
   cd /usr/share/dbus-1/services
   sudo rm -rf org.enlightenment.Ethumb.service
 
-  cd /usr/share/wayland-sessions &>/dev/null
-  sudo rm -rf enlightenment.desktop &>/dev/null
+  cd /usr/share/wayland-sessions
+  sudo rm -rf enlightenment.desktop
 
   cd /usr/share/xsessions
   sudo rm -rf enlightenment.desktop
@@ -228,6 +229,7 @@ final_stp() {
     esac
   fi
 
+  # Removes the translation files too.
   find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
@@ -262,7 +264,7 @@ uninstall_enlighten() {
 
   for I in $PROG_MBS; do
     cd $ESRC/enlighten/$I
-    sudo ninja -C build uninstall &>/dev/null
+    sudo ninja -C build uninstall
     echo
   done
 
