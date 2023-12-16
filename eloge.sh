@@ -24,11 +24,12 @@ beep_exit() {
 
 remov_preq() {
   echo
-  if [ -d $ESRC/rlottie ]; then
+
+  if [ -d $ESRCDIR/rlottie ]; then
     read -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
-      cd $ESRC/rlottie
+      cd $ESRCDIR/rlottie
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
@@ -37,7 +38,7 @@ remov_preq() {
       printf "\n$ITAL%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
-      cd $ESRC/rlottie
+      cd $ESRCDIR/rlottie
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
@@ -45,22 +46,22 @@ remov_preq() {
     esac
   fi
 
-  if [ -d $ESRC/ddcutil-$DDCTL ]; then
+  if [ -d $ESRCDIR/ddcutil-$DDCTL ]; then
     read -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd $ESRC/
+      cd $ESRCDIR/
       sudo make uninstall
-      cd .. && rm -rf $ESRC/ddcutil-$DDCTL
+      cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
       echo
       ;;
     n | N)
       printf "\n$ITAL%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd $ESRC/ddcutil-$DDCTL
+      cd $ESRCDIR/ddcutil-$DDCTL
       sudo make uninstall
-      cd .. && rm -rf $ESRC/ddcutil-$DDCTL
+      cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
       echo
       ;;
     esac
@@ -186,7 +187,7 @@ del_list() {
   sudo rm -rf enlightenment.desktop
 
   cd $HOME
-  sudo rm -rf $ESRC/enlighten
+  sudo rm -rf $ESRCDIR/enlighten
   rm -rf $SCRFLR
   rm -rf .e
   rm -rf .e-log*
@@ -250,7 +251,7 @@ uninstall_enlighten() {
     exit 1
   fi
 
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
 
   clear
   printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
@@ -262,7 +263,7 @@ uninstall_enlighten() {
   cd $HOME
 
   for I in $PROG_MBS; do
-    cd $ESRC/enlighten/$I
+    cd $ESRCDIR/enlighten/$I
     sudo ninja -C build uninstall
     echo
   done
