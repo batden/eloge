@@ -167,8 +167,6 @@ del_list() {
 
   cd /usr/local/share/icons
   sudo rm -rf Enlightenment*
-  sudo rm -rf elementary*
-  sudo rm -rf terminology*
 
   cd /usr/local/share/icons/hicolor/128x128/apps
   sudo rm -rf evisum.png
