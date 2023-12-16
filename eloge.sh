@@ -98,60 +98,13 @@ uninstall_enlighten() {
   cd /etc/xdg/menus
   sudo rm -rf e-applications.menu
 
-  cd /usr/local/bin
-  sudo rm -rf enlightenment_paledit*
-  sudo rm -rf eina*
-  sudo rm -rf efl*
-  sudo rm -rf elua*
-  sudo rm -rf enventor*
-  sudo rm -rf evisum*
-  sudo rm -rf eolian*
-  sudo rm -rf emotion*
-  sudo rm -rf evas*
-  sudo rm -rf terminology*
-  sudo rm -rf ty*
-
   cd /usr/local/etc
   sudo rm -rf enlightenment
 
   cd /usr/local/include
   sudo rm -rf -- *-1
   sudo rm -rf enlightenment
-  sudo rm -rf express*
-
-  cd /usr/local/lib
-  sudo rm -rf ecore*
-  sudo rm -rf edje*
-  sudo rm -rf eeze*
-  sudo rm -rf efl*
-  sudo rm -rf efreet*
-  sudo rm -rf elementary*
-  sudo rm -rf emotion*
-  sudo rm -rf enlightenment*
-  sudo rm -rf ethumb*
-  sudo rm -rf evas*
-  sudo rm -rf libecore*
-  sudo rm -rf libector*
-  sudo rm -rf libedje*
-  sudo rm -rf libeet*
-  sudo rm -rf libeeze*
-  sudo rm -rf libefl*
-  sudo rm -rf libefreet*
-  sudo rm -rf libeina*
-  sudo rm -rf libeio*
-  sudo rm -rf libeldbus*
-  sudo rm -rf libelementary*
-  sudo rm -rf libelocation*
-  sudo rm -rf libelput*
-  sudo rm -rf libelua*
-  sudo rm -rf libembryo*
-  sudo rm -rf libemile*
-  sudo rm -rf libemotion*
-  sudo rm -rf libenventor*
-  sudo rm -rf libeo*
-  sudo rm -rf libeolian*
-  sudo rm -rf libethumb*
-  sudo rm -rf libevas*
+  sudo rm -rf express-0
 
   cd /usr/local/lib/cmake
   sudo rm -rf ddcutil*
