@@ -229,19 +229,18 @@ final_stp() {
     esac
   fi
 
+  sudo rm -rf /usr/lib/systemd/user/enlightenment.service
+  sudo rm -rf /usr/lib/systemd/user/ethumb.service
+  sudo systemctl daemon-reload
+  sudo rm -rf /usr/lib/libintl.so
+  sudo ldconfig
+
   # Removes the translation files too.
   find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
         $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins')
   done
-
-  sudo rm -rf /usr/lib/systemd/user/enlightenment.service
-  sudo rm -rf /usr/lib/systemd/user/ethumb.service
-  sudo systemctl daemon-reload
-
-  sudo rm -rf /usr/lib/libintl.so
-  sudo ldconfig
 }
 
 uninstall_enlighten() {
