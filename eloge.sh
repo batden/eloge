@@ -107,13 +107,12 @@ uninstall_enlighten() {
   sudo rm -rf express-0
 
   cd /usr/local/lib/cmake
-  sudo rm -rf ddcutil*
+  sudo rm -rf ddcutil
 
   cd /usr/local/lib/x86_64-linux-gnu
   sudo rm -rf ecore*
   sudo rm -rf edje*
   sudo rm -rf eeze*
-  sudo rm -rf efl*
   sudo rm -rf efreet*
   sudo rm -rf elementary*
   sudo rm -rf emotion*
@@ -121,29 +120,6 @@ uninstall_enlighten() {
   sudo rm -rf ephoto*
   sudo rm -rf ethumb*
   sudo rm -rf evas*
-  sudo rm -rf libecore*
-  sudo rm -rf libector*
-  sudo rm -rf libedje*
-  sudo rm -rf libeet*
-  sudo rm -rf libeeze*
-  sudo rm -rf libefl*
-  sudo rm -rf libefreet*
-  sudo rm -rf libeina*
-  sudo rm -rf libeio*
-  sudo rm -rf libeldbus*
-  sudo rm -rf libelementary*
-  sudo rm -rf libelocation*
-  sudo rm -rf libelput*
-  sudo rm -rf libelua*
-  sudo rm -rf libembryo*
-  sudo rm -rf libemile*
-  sudo rm -rf libemotion*
-  sudo rm -rf libeo*
-  sudo rm -rf libeolian*
-  sudo rm -rf libethumb*
-  sudo rm -rf libevas*
-  sudo rm -rf libexactness*
-  sudo rm -rf librlottie*
   sudo rm -rf rage*
 
   cd /usr/local/lib/x86_64-linux-gnu/cmake
@@ -162,55 +138,19 @@ uninstall_enlighten() {
   sudo rm -rf Emotion*
   sudo rm -rf Eo*
   sudo rm -rf Eolian*
-  sudo rm -rf Emile*
   sudo rm -rf Ethumb*
   sudo rm -rf Evas*
 
   cd /usr/local/lib/x86_64-linux-gnu/pkgconfig
-  sudo rm -rf ecore*
-  sudo rm -rf ector*
-  sudo rm -rf edje*
-  sudo rm -rf eet*
-  sudo rm -rf eeze*
-  sudo rm -rf efl*
-  sudo rm -rf efreet*
-  sudo rm -rf eina*
-  sudo rm -rf eio*
-  sudo rm -rf eldbus*
-  sudo rm -rf elementary*
-  sudo rm -rf elocation*
-  sudo rm -rf elua*
-  sudo rm -rf embryo*
-  sudo rm -rf emile*
-  sudo rm -rf emotion*
-  sudo rm -rf enlightenment*
-  sudo rm -rf enventor*
-  sudo rm -rf evisum*
-  sudo rm -rf eo*
-  sudo rm -rf eolian*
-  sudo rm -rf ephoto*
-  sudo rm -rf ethumb*
-  sudo rm -rf evas*
-  sudo rm -rf everything*
-  sudo rm -rf exactness*
-  sudo rm -rf express*
-  sudo rm -rf rage*
-  sudo rm -rf rlottie*
-  sudo rm -rf terminology*
-
-  cd /usr/local/man/man1
-  sudo rm -rf terminology*
-  sudo rm -rf ty*
+  sudo rm -rf rlottie.pc
 
   cd /usr/local/share
-  sudo rm -rf dbus*
   sudo rm -rf ddcutil*
   sudo rm -rf ecore*
   sudo rm -rf ecrire*
   sudo rm -rf edi*
   sudo rm -rf edje*
   sudo rm -rf eeze*
-  sudo rm -rf efl*
   sudo rm -rf eflete*
   sudo rm -rf efreet*
   sudo rm -rf elementary*
