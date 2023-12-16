@@ -67,32 +67,7 @@ remov_preq() {
   fi
 }
 
-uninstall_enlighten() {
-  if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
-    beep_exit
-    exit 1
-  fi
-
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
-
-  clear
-  printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
-  printf "$BDR%s %s\n\n" "This may take a few minutes."
-  sleep 1
-  printf "$BLDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
-  sleep 1
-
-  cd $HOME
-
-  for I in $PROG_MBS; do
-    cd $ESRC/enlighten/$I
-    sudo ninja -C build uninstall &>/dev/null
-    echo
-  done
-
-  remov_preq
-
+del_list() {
   cd /etc
   sudo rm -rf enlightenment
 
@@ -231,6 +206,34 @@ uninstall_enlighten() {
   rm -rf .config/rage
   rm -rf .config/terminology
   rm -rf .local/bin/elucidate.sh
+}
+
+uninstall_enlighten() {
+  if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
+    printf "$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    beep_exit
+    exit 1
+  fi
+
+  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+
+  clear
+  printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  printf "$BDR%s %s\n\n" "This may take a few minutes."
+  sleep 1
+  printf "$BLDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
+  sleep 1
+
+  cd $HOME
+
+  for I in $PROG_MBS; do
+    cd $ESRC/enlighten/$I
+    sudo ninja -C build uninstall &>/dev/null
+    echo
+  done
+
+  remov_preq
+  del_list
 
   if [ -f $HOME/.bash_aliases ]; then
     read -t 12 -p "Remove the bash_aliases file? [Y/n] " answer
