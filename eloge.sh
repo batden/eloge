@@ -88,6 +88,7 @@ uninstall_enlighten() {
   for I in $PROG_MBS; do
     cd $ESRC/enlighten/$I
     sudo ninja -C build uninstall &>/dev/null
+    echo
   done
 
   remov_preq
