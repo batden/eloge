@@ -68,7 +68,7 @@ remov_preq() {
   fi
 }
 
-# Enlightenment-related files and folders to be removed.
+# Cleans any leftover files after uninstalling Enlightenment and related applications.
 del_list() {
   cd /etc
   sudo rm -rf enlightenment
