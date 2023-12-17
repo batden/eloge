@@ -8,13 +8,13 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-First, clone this repository:
+First, clone the repository:
 
 ```bash
 git clone https://github.com/batden/eloge.git .eloge
 ```
 
-This creates a new hidden folder named **.eloge** in your home directory.
+This creates a new hidden folder named .eloge in your home directory.
 
 Copy the eloge.sh file from the new .eloge folder to your download folder.
 
@@ -24,18 +24,16 @@ Navigate to the download folder and make the script executable:
 chmod +x eloge.sh
 ```
 
-Then issue the following command:
+Then execute the script with:
 
 ```bash
 ./eloge.sh
 ```
 
-## Update local repository
+## Update local repo
 
 Change to ~/.eloge/ and run:
 
 ```bash
 git pull
 ```
-
-That's it.
