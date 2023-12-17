@@ -233,8 +233,8 @@ final_stp() {
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
   sudo rm -rf /usr/lib/systemd/user/ethumb.service
-  sudo systemctl daemon-reload
   sudo rm -rf /usr/lib/libintl.so
+  sudo systemctl daemon-reload
   sudo ldconfig
 
   # Removes the translation files too.
