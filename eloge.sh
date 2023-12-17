@@ -76,6 +76,9 @@ del_list() {
   cd /etc/xdg/menus
   sudo rm -rf e-applications.menu
 
+  cd /usr/local/bin
+  sudo rm -rf efl*
+
   cd /usr/local/etc
   sudo rm -rf enlightenment
 
@@ -99,6 +102,8 @@ del_list() {
   sudo rm -rf ethumb*
   sudo rm -rf evas*
   sudo rm -rf rage*
+  sudo rm -rf libecore*
+  sudo rm -rf libefl*
 
   cd /usr/local/lib/x86_64-linux-gnu/cmake
   sudo rm -rf Ecore*
@@ -120,7 +125,9 @@ del_list() {
   sudo rm -rf Evas*
 
   cd /usr/local/lib/x86_64-linux-gnu/pkgconfig
-  sudo rm -rf rlottie.pc
+  sudo rm -rf ecore*
+  sudo rm -rf efl*
+  sudo rm -rf rlottie*
 
   cd /usr/local/share
   sudo rm -rf ddcutil*
@@ -167,10 +174,6 @@ del_list() {
 
   cd /usr/local/share/icons
   sudo rm -rf Enlightenment*
-
-  cd /usr/local/share/icons/hicolor/128x128/apps
-  sudo rm -rf evisum.png
-  sudo rm -rf terminology.png
 
   cd /usr/local/share/info
   sudo rm -rf edi
