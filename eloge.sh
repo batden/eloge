@@ -252,6 +252,12 @@ uninstall_enlighten() {
     exit 1
   fi
 
+  if [ -x /usr/bin/wmctrl ]; then
+    if [ "$XDG_SESSION_TYPE" == "x11" ]; then
+      wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+    fi
+  fi
+
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
 
   clear
