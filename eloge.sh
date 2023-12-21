@@ -16,7 +16,21 @@ OFF="\e[0m"
 SCRFLDR=$HOME/.elucidate
 DDCTL=2.0.0
 
-PROG_MBS="terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts enlightenment-module-penguins eflete efl"
+PROG_MBS="
+terminology
+enlightenment
+ephoto
+rage
+evisum
+express
+ecrire
+enventor
+edi
+entice
+enlightenment-module-forecasts
+enlightenment-module-penguins
+eflete
+efl"
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
