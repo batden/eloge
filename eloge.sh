@@ -54,6 +54,7 @@ remov_preq() {
       ;;
     *)
       cd $ESRCDIR/rlottie
+      echo
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
@@ -75,6 +76,7 @@ remov_preq() {
       ;;
     *)
       cd $ESRCDIR/ddcutil-$DDCTL
+      echo
       sudo make uninstall
       cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
       echo
