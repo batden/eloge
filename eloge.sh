@@ -68,7 +68,7 @@ remov_preq() {
   fi
 }
 
-# Cleans any leftover files after uninstalling Enlightenment and related applications.
+# Clean any leftover files after uninstalling Enlightenment and related applications.
 del_list() {
   cd /etc
   sudo rm -rf enlightenment
@@ -237,7 +237,7 @@ final_stp() {
   sudo systemctl daemon-reload
   sudo ldconfig
 
-  # Removes the translation files too.
+  # Remove the translation files too.
   find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
@@ -281,7 +281,7 @@ uninstall_enlighten() {
   final_stp
 }
 
-# Calls the main function.
+# Call the main function.
 lo() {
   trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
