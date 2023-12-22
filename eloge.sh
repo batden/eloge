@@ -304,7 +304,7 @@ lo() {
 
   uninstall_enlighten
 
-  printf "\n$BLDR%s $OFF%s\n\n" "Done!"
+  printf "\n\n$BLDR%s $OFF%s\n\n" "All done."
   # Candidates for further deletion: Search for “eloge”, “ebackups” and “pbackups” in your home folder.
 }
 
