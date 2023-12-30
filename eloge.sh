@@ -299,8 +299,6 @@ uninstall_enlighten() {
   clear
   printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
   sleep 1
-  printf "$BLDR%s %s\n\n" "This may take a few minutes."
-  sleep 1
   printf "$BLDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
   sleep 2
 
