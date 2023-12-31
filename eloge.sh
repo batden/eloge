@@ -68,7 +68,7 @@ remov_preq() {
     read -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd $ESRCDIR/
+      cd $ESRCDIR/ddcutil-$DDCTL
       sudo make uninstall
       cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
       sudo rm -rf /usr/local/lib/cmake/ddcutil
