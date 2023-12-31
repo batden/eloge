@@ -47,6 +47,7 @@ remov_preq() {
       cd $ESRCDIR/rlottie
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
+      sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
       echo
       ;;
     n | N)
@@ -57,6 +58,7 @@ remov_preq() {
       echo
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
+      sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
       echo
       ;;
     esac
@@ -69,6 +71,8 @@ remov_preq() {
       cd $ESRCDIR/
       sudo make uninstall
       cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
+      sudo rm -rf /usr/local/lib/cmake/ddcutil
+      sudo rm -rf /usr/local/share/ddcutil
       echo
       ;;
     n | N)
@@ -79,6 +83,8 @@ remov_preq() {
       echo
       sudo make uninstall
       cd .. && rm -rf $ESRCDIR/ddcutil-$DDCTL
+      sudo rm -rf /usr/local/lib/cmake/ddcutil
+      sudo rm -rf /usr/local/share/ddcutil
       echo
       ;;
     esac
@@ -103,9 +109,6 @@ del_list() {
   sudo rm -rf -- *-1
   sudo rm -rf enlightenment
   sudo rm -rf express-0
-
-  cd /usr/local/lib/cmake
-  sudo rm -rf ddcutil
 
   cd /usr/local/lib/x86_64-linux-gnu
   sudo rm -rf ecore*
@@ -163,10 +166,8 @@ del_list() {
   cd /usr/local/lib/x86_64-linux-gnu/pkgconfig
   sudo rm -rf ecore*
   sudo rm -rf efl*
-  sudo rm -rf rlottie*
 
   cd /usr/local/share
-  sudo rm -rf ddcutil*
   sudo rm -rf ecore*
   sudo rm -rf ecrire*
   sudo rm -rf edi*
