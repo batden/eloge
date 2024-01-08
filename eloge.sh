@@ -323,9 +323,10 @@ lo() {
   uninstall_enlighten
 
   printf "\n\n$BLDR%s $OFF%s\n\n" "All done."
-  # Candidates for further deletion: Search for “eloge”, “ebackups” and “pbackups” in your home folder.
-  # Note that the binary dependencies (dev packages) are kept for system consistency. There is no safe
-  # way to remove them automatically, without close supervision by the user.
+  # Candidates for further deletion: Search for “eloge” and “ebackups” in your home folder.
+  # Note that the binary dependencies (dev packages) are kept for system consistency.
+  # There is no safe way to remove them automatically, without close supervision
+  # by the user.
 }
 
 lo
