@@ -29,6 +29,7 @@ edi
 entice
 enlightenment-module-forecasts
 enlightenment-module-penguins
+enlightenment-module-places
 eflete
 efl"
 
@@ -278,7 +279,7 @@ final_stp() {
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
-        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins')
+        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins|places')
   done
 }
 
