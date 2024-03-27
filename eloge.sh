@@ -14,7 +14,7 @@ BLDR="\e[1;31m"
 OFF="\e[0m"
 
 SCRFLDR=$HOME/.elucidate
-DDCTL=2.1.4
+DDCTL=2.0.0
 
 PROG_MBS="
 terminology
