@@ -2,6 +2,10 @@
 
 # This script helps you cleanly and safely uninstall Enlightenment and related applications.
 
+# Note that the binary dependencies (dev packages) are kept for system consistency.
+# There is no safe way to remove them automatically, without close supervision
+# by the user.
+
 # ELOGE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/
@@ -327,9 +331,6 @@ lo() {
 
   printf "\n\n$BLDR%s $OFF%s\n\n" "All done."
   # Candidates for further deletion: Search for “eloge” and “ebackups” in your home folder.
-  # Note that the binary dependencies (dev packages) are kept for system consistency.
-  # There is no safe way to remove them automatically, without close supervision
-  # by the user.
 }
 
 lo
