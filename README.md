@@ -2,8 +2,6 @@
 
 Use this script to uninstall Enlightenment and related applications.
 
-## Get started
-
 First, clone the repository:
 
 ```bash
@@ -24,12 +22,4 @@ Then execute the script with:
 
 ```bash
 ./eloge.sh
-```
-
-## Update local repo
-
-Change to ~/.eloge/ and run:
-
-```bash
-git pull
 ```
