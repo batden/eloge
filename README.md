@@ -23,3 +23,5 @@ Then execute the script with:
 ```bash
 ./eloge.sh
 ```
+
+That's it.
