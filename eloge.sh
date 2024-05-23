@@ -330,7 +330,7 @@ lo() {
   uninstall_enlighten
 
   printf "\n\n$BLDR%s %s\n" "Done."
-  printf "$BLDR%s $OFF%s\n\n" "Candidates for further deletion: Search for “eloge” and “ebackups” in your home folder."
+  printf "$BLDR%s $OFF%s\n\n" 'Candidates for further deletion: Search for "eloge" and "ebackups" in your home folder.'
 }
 
 lo
