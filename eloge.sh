@@ -13,8 +13,8 @@
 # Got a GitHub account? Please consider starring our repositories to show your support.
 # Thank you!
 
-ITAL="\e[3m"
-BLDR="\e[1;31m"
+RED_BRIGHT="\e[1;31m"
+ITALIC="\e[3m"
 OFF="\e[0m"
 
 SCRFLDR=$HOME/.elucidate
@@ -56,7 +56,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd $ESRCDIR/rlottie
@@ -82,7 +82,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
       cd $ESRCDIR/ddcutil-$DDCTL
@@ -264,7 +264,7 @@ final_stp() {
       sleep 1
       ;;
     n | N)
-      printf "\n$ITAL%s $OFF%s\n\n" "(do not delete .bash_aliases... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not delete .bash_aliases... OK)"
       sleep 1
       ;;
     *)
@@ -291,7 +291,7 @@ final_stp() {
 
 uninstall_enlighten() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -305,9 +305,9 @@ uninstall_enlighten() {
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
 
   clear
-  printf "\n\n$BLDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  printf "\n\n$RED_BRIGHT%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
   sleep 1
-  printf "$BLDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
+  printf "$RED_BRIGHT%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
   sleep 2
 
   cd $HOME
@@ -325,12 +325,12 @@ uninstall_enlighten() {
 
 # Call the main function.
 lo() {
-  trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   uninstall_enlighten
 
-  printf "\n\n$BLDR%s %s\n" "Done."
-  printf "$BLDR%s $OFF%s\n\n" 'Candidates for further deletion: Search for "eloge" and "ebackups" in your home folder.'
+  printf "\n\n$RED_BRIGHT%s %s\n" "Done."
+  printf "$RED_BRIGHT%s $OFF%s\n\n" 'Candidates for further deletion: Search for "eloge" and "ebackups" in your home folder.'
 }
 
 lo
