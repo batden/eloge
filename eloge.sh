@@ -13,7 +13,7 @@
 # Got a GitHub account? Please consider starring our repositories to show your support.
 # Thank you!
 
-RED_BRIGHT="\e[1;31m"
+RED_BRIGHT="\e[1;38;5;1m"
 ITALIC="\e[3m"
 OFF="\e[0m"
 
