@@ -314,7 +314,7 @@ uninstall_enlighten() {
   cd "$HOME"
 
   for I in $PROG_MBS; do
-    cd "$ESRCDIR"/enlighten/$I
+    cd "$ESRCDIR/enlighten/$I"
     sudo ninja -C build uninstall
     echo
   done
