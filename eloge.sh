@@ -20,7 +20,7 @@ ITALIC="\e[3m"
 OFF="\e[0m"
 
 SCRFLDR=$HOME/.elucidate
-DDCTL=2.1.4
+DDCTL=2.2.0
 
 PROG_MBS="
 terminology
