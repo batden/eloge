@@ -15,14 +15,14 @@
 # donating with PayPal (see README.md) to show your support.
 # Thank you!
 
-RED_BRIGHT="\e[1;38;5;1m"
-ITALIC="\e[3m"
-OFF="\e[0m"
+red_bright="\e[1;38;5;1m"
+italic="\e[3m"
+off="\e[0m"
 
-SCRFLDR=$HOME/.elucidate
-DDCTL=2.2.0
+scrfldr=$HOME/.elucidate
+ddctl=2.2.0
 
-PROG_MBS="
+prog_mbs="
 terminology
 enlightenment
 ephoto
@@ -47,21 +47,21 @@ beep_exit() {
 remov_preq() {
   echo
 
-  if [ -d "$ESRCDIR"/rlottie ]; then
+  if [ -d "$esrcdir"/rlottie ]; then
     read -r -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$ESRCDIR"/rlottie || exit
+      cd "$esrcdir"/rlottie || exit
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
       echo
       ;;
     n | N)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$italic%s $off%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
-      cd "$ESRCDIR"/rlottie
+      cd "$esrcdir"/rlottie
       echo
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
@@ -71,26 +71,26 @@ remov_preq() {
     esac
   fi
 
-  if [ -d "$ESRCDIR"/ddcutil-$DDCTL ]; then
+  if [ -d "$esrcdir"/ddcutil-$ddctl ]; then
     read -r -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$ESRCDIR"/ddcutil-$DDCTL
+      cd "$esrcdir"/ddcutil-$ddctl
       sudo make uninstall
-      cd .. && rm -rf "$ESRCDIR"/ddcutil-$DDCTL
+      cd .. && rm -rf "$esrcdir"/ddcutil-$ddctl
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       echo
       ;;
     n | N)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd "$ESRCDIR"/ddcutil-$DDCTL
+      cd "$esrcdir"/ddcutil-$ddctl
       echo
       sudo make uninstall
-      cd .. && rm -rf "$ESRCDIR"/ddcutil-$DDCTL
+      cd .. && rm -rf "$esrcdir"/ddcutil-$ddctl
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
@@ -236,8 +236,8 @@ del_list() {
   sudo rm -rf enlightenment.desktop
 
   cd "$HOME"
-  sudo rm -rf "$ESRCDIR"/enlighten
-  rm -rf "$SCRFLDR"
+  sudo rm -rf "$esrcdir"/enlighten
+  rm -rf "$scrfldr"
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
@@ -268,7 +268,7 @@ final_stp() {
       sleep 1
       ;;
     n | N)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(do not delete .bash_aliases... OK)"
+      printf "\n$italic%s $off%s\n\n" "(do not delete .bash_aliases... OK)"
       sleep 1
       ;;
     *)
@@ -296,7 +296,7 @@ final_stp() {
 
 uninstall_enlighten() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -307,18 +307,18 @@ uninstall_enlighten() {
     fi
   fi
 
-  ESRCDIR=$(cat "$HOME"/.cache/ebuilds/storepath)
+  esrcdir=$(cat "$HOME"/.cache/ebuilds/storepath)
 
   clear
-  printf "\n\n$RED_BRIGHT%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  printf "\n\n$red_bright%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
   sleep 1
-  printf "$RED_BRIGHT%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
+  printf "$red_bright%s $off%s\n\n" "You will be prompted to answer some basic questions..."
   sleep 2
 
   cd "$HOME"
 
-  for I in $PROG_MBS; do
-    cd "$ESRCDIR/enlighten/$I"
+  for I in $prog_mbs; do
+    cd "$esrcdir/enlighten/$I"
     sudo ninja -C build uninstall
     echo
   done
@@ -330,12 +330,12 @@ uninstall_enlighten() {
 
 # Call the main function.
 lo() {
-  trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   uninstall_enlighten
 
-  printf "\n\n$RED_BRIGHT%s %s\n" "Done."
-  printf "$RED_BRIGHT%s $OFF%s\n\n" 'Candidates for further deletion: Search for "eloge" and "ebackups" in your home folder.'
+  printf "\n\n$red_bright%s %s\n" "Done."
+  printf "$red_bright%s $off%s\n\n" 'Candidates for further deletion: Search for "eloge" and "ebackups" in your home folder.'
 }
 
 lo
