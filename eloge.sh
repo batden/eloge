@@ -22,22 +22,22 @@ off="\e[0m"
 scrfldr=$HOME/.elucidate
 ddctl=2.2.0
 
-prog_mbs="
-terminology
-enlightenment
-ephoto
-rage
-evisum
-express
-ecrire
-enventor
-edi
-entice
-enlightenment-module-forecasts
-enlightenment-module-penguins
-enlightenment-module-places
-eflete
-efl"
+prog_mbs=(
+  terminology
+  enlightenment
+  ephoto
+  rage
+  evisum
+  express
+  ecrire
+  enventor
+  edi
+  entice
+  enlightenment-module-forecasts
+  enlightenment-module-penguins
+  enlightenment-module-places
+  eflete
+  efl)
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
@@ -317,7 +317,7 @@ uninstall_enlighten() {
 
   cd "$HOME"
 
-  for I in $prog_mbs; do
+  for I in "${prog_mbs[@]}"; do
     cd "$esrcdir/enlighten/$I"
     sudo ninja -C build uninstall
     echo
