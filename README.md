@@ -16,7 +16,7 @@ Copy the eloge.sh file from the new .eloge folder to somewhere else and make the
 chmod +x eloge.sh
 ```
 
-Then execute the script with:
+Then, execute the script with:
 
 ```bash
 ./eloge.sh
